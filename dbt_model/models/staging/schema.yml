@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_frs_facilities
+  - name: stg_frs_naics_codes
+  - name: stg_frs_sics_codes
+  - name: stg_frs_programs
+  - name: stg_epa_informal_enforcement_actions
+  - name: stg_npdes_naics_codes
+  - name: stg_npdes_sic_codes
+  - name: stg_npdes_formal_enforcement_actions
+  - name: stg_npdes_informal_enforcement_actions
