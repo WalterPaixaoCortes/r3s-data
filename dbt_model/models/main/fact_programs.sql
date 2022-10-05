@@ -3,12 +3,12 @@ SELECT prg.prg_acronym,
       fac.fac_id,
       fac.fac_name,
       fac.fac_city,
-      IFNULL( fac.fac_state, 'NA' ) AS fac_state, 
-      IFNULL( st.state_name, 'NA' ) AS state_name, 
+      coalesce( fac.fac_state, 'NA' ) AS fac_state, 
+      coalesce( st.state_name, 'NA' ) AS state_name, 
       fac.fac_zipcode, 
       fac.fac_epa_region, 
-      IFNULL( nai.prg_naics_code, 'NA' ) AS naics_code, 
-      IFNULL( naid.naics_desc, 'NA' ) AS naics_desc
+      coalesce( nai.prg_naics_code, 'NA' ) AS naics_code, 
+      coalesce( naid.naics_desc, 'NA' ) AS naics_desc
 FROM {{ ref('stg_frs_programs') }} prg
 INNER JOIN {{ ref('stg_frs_facilities') }} fac
     ON prg.fac_id = fac.fac_id

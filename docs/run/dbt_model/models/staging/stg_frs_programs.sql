@@ -1,6 +1,8 @@
-create  table staging."stg_frs_programs"
-      as
-        SELECT
+
+
+  create  table "postgres"."staging"."stg_frs_programs__dbt_tmp"
+  as (
+    SELECT
   trim(prg.pgm_sys_id) as prg_id,
   trim(prg.registry_id) as fac_id,
   trim(prg.pgm_sys_acrnm) as prg_acronym,
@@ -10,6 +12,7 @@ create  table staging."stg_frs_programs"
   trim(prg.state_name) as prg_state_name,
   trim(prg.country_name) as prg_country_name,
   trim(prg.postal_code) as prg_zipcode,
-  datetime() AS load_date
+  now() AS load_date
 FROM
-  source."frs_program_links" prg
+  "postgres"."source"."frs_program_links" prg
+  );
