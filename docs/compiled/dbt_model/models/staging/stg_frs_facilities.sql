@@ -9,8 +9,8 @@ with raw_data as (
        , coalesce('Region ' || trim(fac_epa_region), 'Not Informed') as fac_epa_region
        , cast(latitude_measure as real) as fac_latitude
        , cast(longitude_measure as real) as fac_longitude
-       , now() as load_date
-  from "postgres"."source"."frs_facilities"
+       , datetime() as load_date
+  from source."frs_facilities"
 )
 
 select *

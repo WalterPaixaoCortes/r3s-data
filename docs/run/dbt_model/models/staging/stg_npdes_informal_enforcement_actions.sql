@@ -1,8 +1,6 @@
-
-
-  create  table "postgres"."staging"."stg_npdes_informal_enforcement_actions__dbt_tmp"
-  as (
-    select 'INFORMAL' as enf_type,
+create  table staging."stg_npdes_informal_enforcement_actions"
+      as
+        select 'INFORMAL' as enf_type,
        trim(registry_id) as fac_id,
        trim(npdes_id) as npdes_id,
        trim(agency) as enf_agency,
@@ -15,6 +13,5 @@
        trim(enf_identifier) as enf_identifier,
        trim(activity_id) as activity_id,
        trim(official_flg) as official_flg,
-       now() as load_date
-  from "postgres"."source"."npdes_informal_enforcement_actions"
-  );
+       datetime() as load_date
+  from source."npdes_informal_enforcement_actions"
