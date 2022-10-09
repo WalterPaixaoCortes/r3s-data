@@ -8,15 +8,15 @@ The objective of this project is to create a ETL pipeline that will populate a d
 
 The approach adopted was to write some jupyter notebooks with the tasks we need to execute in order to do the data exploration and build the data model.
 
-## Data Exploration
+## Data Model
 
 ### Description
 
-This notebook contain the routine to download, unzip and load the data into database.
+This data model contains all the documentation regarding our datawarehouse.
 
 ### Link
 
-[Data Exploration](notebooks/Data_Exploration.ipynb)
+[Data Documentation](https://walterpaixaocortes.github.io/r3s-data/#!/overview/dbt_model)
 
 ## Data Dictionary
 

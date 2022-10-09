@@ -3,115 +3,284 @@ version: 2
 sources:
   - name: source
     tables:
-      - name: frs_program_links
-        columns:
-          - name: pgm_sys_acrnm
-          - name: pgm_sys_id
-          - name: registry_id
-          - name: primary_name
-          - name: location_address
-          - name: supplemental_location
-          - name: city_name
-          - name: county_name
-          - name: fips_code
-          - name: state_code
-          - name: state_name
-          - name: country_name
-          - name: postal_code
       - name: wifia_loans_closed
         columns:
-          - name: seq
-          - name: borrower
-          - name: project name
-          - name: state
-          - name: close date
-          - name: loan amount
-          - name: environmental compliance
+         - name: seq
+         - name: borrower
+         - name: project name
+         - name: state
+         - name: close date
+         - name: loan amount
+         - name: environmental compliance
       - name: wifia_projects_selected
         columns:
-          - name: seq
-          - name: fiscal year
-          - name: borrower
-          - name: project name
-          - name: loan  amount
-          - name: state
-          - name: approval status
+         - name: seq
+         - name: fiscal year
+         - name: borrower
+         - name: project name
+         - name: loan  amount
+         - name: state
+         - name: approval status
       - name: wifia_letters_submitted
         columns:
-          - name: seq
-          - name: fiscal year
-          - name: prospective borrower
-          - name: state
-          - name: project description
-      - name: npdes_informal_enforcement_actions
-        columns:
-          - name: npdes_id
-          - name: registry_id
-          - name: agency
-          - name: activity_id
-          - name: activity_type_code
-          - name: activity_type_desc
-          - name: enf_type_code
-          - name: enf_type_desc
-          - name: achieved_date
-          - name: enf_identifier
-          - name: official_flg
-      - name: frs_facilities
-        columns:
-          - name: fac_name
-          - name: fac_street
-          - name: fac_city
-          - name: fac_state
-          - name: fac_zip
-          - name: registry_id
-          - name: fac_county
-          - name: fac_epa_region
-          - name: latitude_measure
-          - name: longitude_measure
-      - name: frs_naics_codes
-        columns:
-          - name: pgm_sys_id
-          - name: pgm_sys_acnrm
-          - name: naics_code
-          - name: registry_id
-      - name: npdes_naics
-        columns:
-          - name: npdes_id
-          - name: naics_code
-          - name: naics_desc
-          - name: primary_indicator_flag
-      - name: npdes_formal_enforcement_actions
-        columns:
-          - name: npdes_id
-          - name: enf_identifier
-          - name: activity_id
-          - name: activity_type_code
-          - name: enf_type_code
-          - name: enf_type_desc
-          - name: agency
-          - name: settlement_entered_date
-          - name: fed_penalty_assessed_amt
-          - name: state_local_penalty_amt
-      - name: frs_sic_codes
-        columns:
-          - name: pgm_sys_id
-          - name: pgm_sys_acnrm
-          - name: sic_code
-          - name: registry_id
-      - name: npdes_sics
-        columns:
-          - name: npdes_id
-          - name: sic_code
-          - name: sic_desc
-          - name: primary_indicator_flag
+         - name: seq
+         - name: fiscal year
+         - name: prospective borrower
+         - name: state
+         - name: project description
       - name: epa_informal_enforcement_actions
         columns:
-          - name: pgm_sys_id
-          - name: registry_id
-          - name: agency
-          - name: activity_type_code
-          - name: enf_type_code
-          - name: enf_type_desc
-          - name: achieved_date
-          - name: enf_identifier
-          - name: statute
+         - name: pgm_sys_id
+         - name: registry_id
+         - name: agency
+         - name: activity_type_code
+         - name: enf_type_code
+         - name: enf_type_desc
+         - name: achieved_date
+         - name: enf_identifier
+         - name: statute
+      - name: case_enforcement_conclusion_sep
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: enf_conclusion_id
+         - name: sep_category_code
+         - name: sep_category_desc
+         - name: sep_id
+         - name: sep_text
+         - name: sep_amt
+      - name: case_related_activities
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: activity_status_date
+         - name: activity_type_code
+         - name: activity_type_desc
+      - name: case_relief_sought
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: relief_code
+         - name: relief_desc
+      - name: case_pollutants
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: pollutant_code
+         - name: pollutant_desc
+         - name: chemical_abstract_service_nmbr
+      - name: case_penalties
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: fed_penalty
+         - name: st_lcl_penalty
+         - name: total_sep
+         - name: compliance_action_cost
+         - name: federal_cost_recovery_amt
+         - name: state_local_cost_recovery_amt
+         - name: penalty_collected_amt
+      - name: npdes_naics
+        columns:
+         - name: npdes_id
+         - name: naics_code
+         - name: naics_desc
+         - name: primary_indicator_flag
+      - name: case_enforcement_conclusion_dollars
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: enf_conclusion_id
+         - name: state_local_penalty_amt
+         - name: cost_recovery_amt
+         - name: fed_penalty
+         - name: compliance_action_cost
+         - name: sep_cost
+         - name: penalty_collected_amt
+      - name: case_violations
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: violation_type_code
+         - name: rank_order
+         - name: violation_type_desc
+      - name: case_enforcement_conclusion_pollutants
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: enf_conclusion_id
+         - name: comp_action_id
+         - name: environmental_impact_id
+         - name: sep_id
+         - name: pollutant_code
+         - name: pollutant_name
+         - name: average_annual_value
+         - name: pollutant_unit_code
+         - name: media_code
+         - name: media_desc
+         - name: sep_or_comp_flag
+      - name: case_enforcement_type
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: enf_type_code
+         - name: enf_type_desc
+      - name: case_defendants
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: defendant_name
+         - name: named_in_complaint_flag
+         - name: named_in_settlement_flag
+      - name: npdes_formal_enforcement_actions
+        columns:
+         - name: npdes_id
+         - name: enf_identifier
+         - name: activity_id
+         - name: activity_type_code
+         - name: enf_type_code
+         - name: enf_type_desc
+         - name: agency
+         - name: settlement_entered_date
+         - name: fed_penalty_assessed_amt
+         - name: state_local_penalty_amt
+      - name: case_law_sections
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: rank_order
+         - name: statute_code
+         - name: law_section_code
+         - name: law_section_desc
+      - name: case_enforcement_conclusions
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: enf_conclusion_id
+         - name: enf_conclusion_nmbr
+         - name: enf_conclusion_action_code
+         - name: enf_conclusion_name
+         - name: settlement_lodged_date
+         - name: settlement_entered_date
+         - name: settlement_fy
+         - name: primary_law
+         - name: region_code
+         - name: activity_type_code
+         - name: fed_penalty_assessed_amt
+         - name: state_local_penalty_amt
+         - name: sep_amt
+         - name: compliance_action_cost
+         - name: cost_recovery_awarded_amt
+      - name: npdes_sics
+        columns:
+         - name: npdes_id
+         - name: sic_code
+         - name: sic_desc
+         - name: primary_indicator_flag
+      - name: case_facilities
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: registry_id
+         - name: facility_name
+         - name: location_address
+         - name: city
+         - name: state_code
+         - name: zip
+         - name: primary_sic_code
+         - name: primary_naics_code
+      - name: case_enforcement_conclusion_complying_actions
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: enf_conclusion_id
+         - name: comp_action_id
+         - name: comp_action_description
+         - name: comp_action_type_code
+         - name: comp_action_type_desc
+         - name: comp_action_category_type_desc
+      - name: case_programs
+        columns:
+         - name: activity_id
+         - name: case_number
+         - name: program_code
+         - name: program_desc
+      - name: frs_sic_codes
+        columns:
+         - name: pgm_sys_id
+         - name: pgm_sys_acnrm
+         - name: sic_code
+         - name: registry_id
+      - name: frs_naics_codes
+        columns:
+         - name: pgm_sys_id
+         - name: pgm_sys_acnrm
+         - name: naics_code
+         - name: registry_id
+      - name: case_enforcements
+        columns:
+         - name: activity_id
+         - name: activity_name
+         - name: state_code
+         - name: region_code
+         - name: fiscal_year
+         - name: case_number
+         - name: case_name
+         - name: activity_type_code
+         - name: activity_type_desc
+         - name: activity_status_code
+         - name: activity_status_desc
+         - name: activity_status_date
+         - name: lead
+         - name: case_status_date
+         - name: doj_docket_nmbr
+         - name: enf_outcome_code
+         - name: enf_outcome_desc
+         - name: total_penalty_assessed_amt
+         - name: total_cost_recovery_amt
+         - name: total_comp_action_amt
+         - name: hq_division
+         - name: branch
+         - name: voluntary_self_disclosure_flag
+         - name: multimedia_flag
+         - name: enf_summary_text
+      - name: npdes_informal_enforcement_actions
+        columns:
+         - name: npdes_id
+         - name: registry_id
+         - name: agency
+         - name: activity_id
+         - name: activity_type_code
+         - name: activity_type_desc
+         - name: enf_type_code
+         - name: enf_type_desc
+         - name: achieved_date
+         - name: enf_identifier
+         - name: official_flg
+      - name: frs_facilities
+        columns:
+         - name: fac_name
+         - name: fac_street
+         - name: fac_city
+         - name: fac_state
+         - name: fac_zip
+         - name: registry_id
+         - name: fac_county
+         - name: fac_epa_region
+         - name: latitude_measure
+         - name: longitude_measure
+      - name: frs_program_links
+        columns:
+         - name: pgm_sys_acrnm
+         - name: pgm_sys_id
+         - name: registry_id
+         - name: primary_name
+         - name: location_address
+         - name: supplemental_location
+         - name: city_name
+         - name: county_name
+         - name: fips_code
+         - name: state_code
+         - name: state_name
+         - name: country_name
+         - name: postal_code

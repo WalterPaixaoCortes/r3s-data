@@ -3,3 +3,5 @@ version: 2
 models:
   - name: fact_programs
   - name: fact_epa_informal_actions
+  - name: fact_cases
+  - name: fact_case_conclusions

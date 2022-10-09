@@ -1,12 +1,201 @@
 version: 2
 
 models:
-  - name: stg_frs_facilities
-  - name: stg_frs_naics_codes
-  - name: stg_frs_sics_codes
-  - name: stg_frs_programs
+  - name: stg_case_defendants
+    columns:
+     - name: case_number
+     - name: defendant_name
+  - name: stg_case_enforcement_conclusion_complying_actions
+    columns:
+     - name: case_number
+     - name: comp_action_category_type_desc
+  - name: stg_case_enforcement_conclusion_dollars
+    columns:
+     - name: case_number
+     - name: state_local_penalty_amt
+     - name: cost_recovery_amt
+     - name: fed_penalty
+     - name: compliance_action_cost
+     - name: sep_cost
+  - name: stg_case_enforcement_conclusion_pollutants
+    columns:
+     - name: case_number
+     - name: pollutant_name
+     - name: average_annual_value
+     - name: pollutant_unit_code
+     - name: media_code
+  - name: stg_case_enforcement_conclusion_sep
+    columns:
+     - name: case_number
+     - name: sep_category_desc
+     - name: sep_amt
+  - name: stg_case_enforcement_conclusions
+    columns:
+     - name: case_number
+     - name: enf_conclusion_action_code
+     - name: primary_law
+     - name: region_code
+     - name: activity_type_code
+     - name: fed_penalty_assessed_amt
+     - name: state_local_penalty_amt
+     - name: sep_amt
+     - name: compliance_action_cost
+     - name: cost_recovery_awarded_amt
+  - name: stg_case_enforcement_type
+    columns:
+     - name: case_number
+     - name: enf_type_desc
+  - name: stg_case_enforcements
+    columns:
+     - name: case_number
+     - name: state_code
+     - name: region_code
+     - name: case_name
+     - name: activity_type_code
+     - name: activity_status_desc
+     - name: activity_status_date
+     - name: enf_outcome_desc
+     - name: total_penalty_assessed_amt
+     - name: total_cost_recovery_amt
+     - name: total_comp_action_amt
+     - name: hq_division
+     - name: voluntary_self_disclosure_flag
+     - name: multimedia_flag
+  - name: stg_case_facilities
+    columns:
+     - name: case_number
+     - name: registry_id
+     - name: city
+     - name: state_code
+     - name: zip
+     - name: primary_sic_code
+     - name: primary_naics_code
+  - name: stg_case_law_sections
+    columns:
+     - name: case_number
+     - name: statute_code
+  - name: stg_case_penalties
+    columns:
+     - name: case_number
+     - name: fed_penalty
+     - name: st_lcl_penalty
+     - name: total_sep
+     - name: compliance_action_cost
+     - name: federal_cost_recovery_amt
+     - name: state_local_cost_recovery_amt
+  - name: stg_case_pollutants
+    columns:
+     - name: case_number
+     - name: pollutant_desc
+  - name: stg_case_programs
+    columns:
+     - name: case_number
+     - name: program_desc
+  - name: stg_case_related_activities
+    columns:
+     - name: case_number
+     - name: activity_status_date
+     - name: activity_type_code
+  - name: stg_case_relief_sought
+    columns:
+     - name: case_number
+     - name: relief_desc
+  - name: stg_case_violations
+    columns:
+     - name: case_number
+     - name: violation_type_code
+     - name: violation_type_desc
   - name: stg_epa_informal_enforcement_actions
-  - name: stg_npdes_naics_codes
-  - name: stg_npdes_sic_codes
+    columns:
+     - name: enf_type
+     - name: prg_id
+     - name: fac_id
+     - name: enf_agency
+     - name: activity_type_code
+     - name: enf_type_code
+     - name: enf_type_desc
+     - name: enf_achieved_date
+     - name: enf_identifier
+     - name: enf_statute
+     - name: load_date
+  - name: stg_frs_facilities
+    columns:
+     - name: fac_id
+     - name: fac_name
+     - name: fac_street
+     - name: fac_city
+     - name: fac_state
+     - name: fac_zipcode
+     - name: fac_county
+     - name: fac_epa_region
+     - name: fac_latitude
+     - name: fac_longitude
+     - name: load_date
+  - name: stg_frs_naics_codes
+    columns:
+     - name: fac_id
+     - name: prg_id
+     - name: prg_acronym
+     - name: prg_naics_code
+  - name: stg_frs_programs
+    columns:
+     - name: prg_id
+     - name: fac_id
+     - name: prg_acronym
+     - name: prg_primary_name
+     - name: prg_city_name
+     - name: prg_county_name
+     - name: prg_state_name
+     - name: prg_country_name
+     - name: prg_zipcode
+     - name: load_date
+  - name: stg_frs_sics_codes
+    columns:
+     - name: prg_id
+     - name: fac_id
+     - name: prg_acronym
+     - name: prg_sics_code
+  - name: stg_naics_codes
+    columns:
+     - name: naics_code
+     - name: naics_desc
   - name: stg_npdes_formal_enforcement_actions
+    columns:
+     - name: enf_type
+     - name: npdes_id
+     - name: enf_agency
+     - name: activity_type_code
+     - name: enf_type_code
+     - name: enf_type_desc
+     - name: enf_achieved_date
+     - name: enf_identifier
+     - name: activity_id
+     - name: fed_penalty_assessed_amt
+     - name: state_local_penalty_amt
+     - name: load_date
   - name: stg_npdes_informal_enforcement_actions
+    columns:
+     - name: enf_type
+     - name: fac_id
+     - name: npdes_id
+     - name: enf_agency
+     - name: activity_type_code
+     - name: enf_type_code
+     - name: enf_type_desc
+     - name: enf_achieved_date
+     - name: enf_identifier
+     - name: activity_id
+     - name: official_flg
+     - name: load_date
+  - name: stg_npdes_naics_codes
+    columns:
+     - name: naics_code
+     - name: naics_desc
+     - name: primary_indicator_flag
+     - name: load_date
+  - name: stg_npdes_sic_codes
+    columns:
+     - name: sic_code
+     - name: sic_desc
+     - name: primary_indicator_flag
+     - name: load_date
