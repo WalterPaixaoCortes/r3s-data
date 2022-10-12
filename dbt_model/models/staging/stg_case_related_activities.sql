@@ -1,3 +1,9 @@
+{{ config(
+    indexes=[
+      {'columns': ['case_number'], 'type': 'hash'},
+    ]
+)}}
+
 select
   case_number,
   activity_status_date,

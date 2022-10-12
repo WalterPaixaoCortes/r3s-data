@@ -1,15 +1,15 @@
 select
   con.*,
   sep.sep_category_desc,
-  sep.sep_amt,
+  sep.sep_amt as sep_amt_sep,
   pol.pollutant_name,
   pol.average_annual_value,
   pol.pollutant_unit_code,
   pol.media_code,
-  dol.state_local_penalty_amt,
+  dol.state_local_penalty_amt as state_local_penalty_amt_dol,
   dol.cost_recovery_amt,
   dol.fed_penalty,
-  dol.compliance_action_cost,
+  dol.compliance_action_cost as compliance_action_cost_dol,
   dol.sep_cost,
   act.comp_action_category_type_desc
 from {{ref('stg_case_enforcement_conclusions')}} con

@@ -1,3 +1,5 @@
+
+
 select
   case_number,
   enf_conclusion_action_code,
@@ -9,4 +11,4 @@ select
   sep_amt,
   compliance_action_cost,
   cost_recovery_awarded_amt
-from source."case_enforcement_conclusions"
+from "postgres"."source"."case_enforcement_conclusions"

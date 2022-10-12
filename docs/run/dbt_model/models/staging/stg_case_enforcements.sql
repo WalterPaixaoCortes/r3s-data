@@ -1,6 +1,10 @@
-create  table staging."stg_case_enforcements"
-      as
-        select 
+
+
+  create  table "postgres"."staging"."stg_case_enforcements__dbt_tmp"
+  as (
+    
+
+select 
   case_number,
   state_code,
   region_code,
@@ -15,4 +19,5 @@ create  table staging."stg_case_enforcements"
   hq_division,
   voluntary_self_disclosure_flag,
   multimedia_flag
-from source."case_enforcements"
+from "postgres"."source"."case_enforcements"
+  );

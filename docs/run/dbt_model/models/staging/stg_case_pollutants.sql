@@ -1,6 +1,11 @@
-create  table staging."stg_case_pollutants"
-      as
-        select
+
+
+  create  table "postgres"."staging"."stg_case_pollutants__dbt_tmp"
+  as (
+    
+
+select
   case_number,
   pollutant_desc
-from source."case_pollutants"
+from "postgres"."source"."case_pollutants"
+  );

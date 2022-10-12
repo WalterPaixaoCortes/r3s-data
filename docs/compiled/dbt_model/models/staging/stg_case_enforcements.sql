@@ -1,3 +1,5 @@
+
+
 select 
   case_number,
   state_code,
@@ -13,4 +15,4 @@ select
   hq_division,
   voluntary_self_disclosure_flag,
   multimedia_flag
-from source."case_enforcements"
+from "postgres"."source"."case_enforcements"

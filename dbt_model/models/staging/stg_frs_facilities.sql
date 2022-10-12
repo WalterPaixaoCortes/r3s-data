@@ -1,3 +1,9 @@
+{{ config(
+    indexes=[
+      {'columns': ['fac_id'], 'type': 'hash'}
+    ]
+)}}
+
 with raw_data as (
   select trim(registry_id) as fac_id
        , replace(trim(coalesce(fac_name, 'Not Informed')),'	','') as fac_name

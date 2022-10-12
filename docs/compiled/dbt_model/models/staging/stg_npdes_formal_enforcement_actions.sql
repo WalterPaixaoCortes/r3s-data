@@ -11,5 +11,5 @@ select 'FORMAL' as enf_type,
        trim(activity_id) as activity_id,
        cast(fed_penalty_assessed_amt as real) as fed_penalty_assessed_amt,
        cast(state_local_penalty_amt as real) as state_local_penalty_amt,
-       datetime() as load_date
-  from source."npdes_formal_enforcement_actions"
+       now() as load_date
+  from "postgres"."source"."npdes_formal_enforcement_actions"

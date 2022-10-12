@@ -1,4 +1,6 @@
+
+
 select
   case_number,
-  defendant_name
-from source."case_defendants"
+  initcap(coalesce(defendant_name, 'Not Informed')) as defendant_name
+from "postgres"."source"."case_defendants"

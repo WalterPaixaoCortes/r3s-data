@@ -1,3 +1,9 @@
+{{ config(
+    indexes=[
+      {'columns': ['fac_id'], 'type': 'hash'}
+    ]
+)}}
+
 select 'INFORMAL' as enf_type,
        trim(enf.PGM_SYS_ID) as prg_id,
        trim(enf.REGISTRY_ID) as fac_id,

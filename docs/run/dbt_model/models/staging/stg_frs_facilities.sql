@@ -1,6 +1,10 @@
-create  table staging."stg_frs_facilities"
-      as
-        with raw_data as (
+
+
+  create  table "postgres"."staging"."stg_frs_facilities__dbt_tmp"
+  as (
+    
+
+with raw_data as (
   select trim(registry_id) as fac_id
        , replace(trim(coalesce(fac_name, 'Not Informed')),'	','') as fac_name
        , coalesce(trim(fac_street),'Not Informed') as fac_street
@@ -11,9 +15,10 @@ create  table staging."stg_frs_facilities"
        , coalesce('Region ' || trim(fac_epa_region), 'Not Informed') as fac_epa_region
        , cast(latitude_measure as real) as fac_latitude
        , cast(longitude_measure as real) as fac_longitude
-       , datetime() as load_date
-  from source."frs_facilities"
+       , now() as load_date
+  from "postgres"."source"."frs_facilities"
 )
 
 select *
 from raw_data
+  );

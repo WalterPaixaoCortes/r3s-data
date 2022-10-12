@@ -1,6 +1,8 @@
-create  table main."fact_cases"
-      as
-        select
+
+
+  create  table "postgres"."main"."fact_cases__dbt_tmp"
+  as (
+    select
   c.case_number,
   c.state_code,
   c.region_code,
@@ -37,24 +39,25 @@ create  table main."fact_cases"
   fac.zip,
   fac.primary_sic_code,
   fac.primary_naics_code
-from staging."stg_case_enforcements" c
-  inner join staging."stg_case_enforcement_type" et
+from "postgres"."staging"."stg_case_enforcements" c
+  inner join "postgres"."staging"."stg_case_enforcement_type" et
     on c.case_number = et.case_number
-  inner join staging."stg_case_violations" v 
+  inner join "postgres"."staging"."stg_case_violations" v 
     on c.case_number = v.case_number
-  inner join staging."stg_case_relief_sought" crs
+  inner join "postgres"."staging"."stg_case_relief_sought" crs
     on c.case_number = crs.case_number
-  inner join staging."stg_case_penalties" pen
+  inner join "postgres"."staging"."stg_case_penalties" pen
     on c.case_number = pen.case_number
-  inner join staging."stg_case_law_sections" lsc
+  inner join "postgres"."staging"."stg_case_law_sections" lsc
     on c.case_number = lsc.case_number
-  inner join staging."stg_case_defendants" def
+  inner join "postgres"."staging"."stg_case_defendants" def
     on c.case_number = def.case_number
-  inner join staging."stg_case_pollutants" pol
+  inner join "postgres"."staging"."stg_case_pollutants" pol
     on c.case_number = pol.case_number
-  inner join staging."stg_case_programs" prg
+  inner join "postgres"."staging"."stg_case_programs" prg
     on c.case_number = prg.case_number
-  inner join staging."stg_case_related_activities" rlt
+  inner join "postgres"."staging"."stg_case_related_activities" rlt
     on c.case_number = rlt.case_number    
-  inner join staging."stg_case_facilities" fac
+  inner join "postgres"."staging"."stg_case_facilities" fac
     on c.case_number = fac.case_number
+  );

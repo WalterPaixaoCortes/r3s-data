@@ -1,3 +1,5 @@
+
+
 select
   case_number,
   registry_id,
@@ -6,4 +8,4 @@ select
   zip,
   primary_sic_code,
   primary_naics_code
-from source."case_facilities"
+from "postgres"."source"."case_facilities"

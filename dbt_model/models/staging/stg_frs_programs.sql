@@ -1,3 +1,10 @@
+{{ config(
+    indexes=[
+      {'columns': ['fac_id'], 'type': 'hash'},
+      {'columns': ['prg_id', 'prg_acronym', 'fac_id']}
+    ]
+)}}
+
 SELECT
   trim(prg.pgm_sys_id) as prg_id,
   trim(prg.registry_id) as fac_id,

@@ -1,6 +1,10 @@
-create  table staging."stg_case_enforcement_conclusions"
-      as
-        select
+
+
+  create  table "postgres"."staging"."stg_case_enforcement_conclusions__dbt_tmp"
+  as (
+    
+
+select
   case_number,
   enf_conclusion_action_code,
   primary_law,
@@ -11,4 +15,5 @@ create  table staging."stg_case_enforcement_conclusions"
   sep_amt,
   compliance_action_cost,
   cost_recovery_awarded_amt
-from source."case_enforcement_conclusions"
+from "postgres"."source"."case_enforcement_conclusions"
+  );

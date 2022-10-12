@@ -6,7 +6,7 @@ version: "1.0.0"
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: "dbt_model_dev"
+profile: "dbt_model"
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -37,12 +37,16 @@ models:
       +schema: main
       +tags:
         - first_draft
+      +grants:
+        select: ["lindsey", "kyle", "tblusr"]
 
     staging:
       +materialized: table
       +schema: staging
       +tags:
         - first_draft
+      +grants:
+        select: ["lindsey", "kyle"]
 seeds:
   dbt_model:
     +schema: seed_data

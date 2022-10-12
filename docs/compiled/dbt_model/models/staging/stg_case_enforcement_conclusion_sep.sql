@@ -1,5 +1,8 @@
-select
-  case_number,
-  sep_category_desc,
-  sep_amt
-from source."case_enforcement_conclusion_sep"
+
+
+select 
+  distinct 
+    case_number, 
+    unnest(string_to_array(sep_category_desc, '/')) AS sep_category_desc, 
+    cast(sep_amt as float) as sep_amt
+from "postgres"."source"."case_enforcement_conclusion_sep"
