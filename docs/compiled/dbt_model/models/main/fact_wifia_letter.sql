@@ -1,5 +1,5 @@
 select wls.fiscal_year,
-       wls.borrower,
+       coalesce(wls.borrower, 'Not Informed') as borrower,
        wls.state,
        wls.project_desc,
        wps.project_name,

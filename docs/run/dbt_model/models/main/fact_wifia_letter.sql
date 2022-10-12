@@ -3,7 +3,7 @@
   create  table "postgres"."main"."fact_wifia_letter__dbt_tmp"
   as (
     select wls.fiscal_year,
-       wls.borrower,
+       coalesce(wls.borrower, 'Not Informed') as borrower,
        wls.state,
        wls.project_desc,
        wps.project_name,
