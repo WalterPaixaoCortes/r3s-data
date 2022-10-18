@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_frs_programs__dbt_tmp"
   as (
@@ -18,3 +20,4 @@ SELECT
 FROM
   "postgres"."source"."frs_program_links" prg
   );
+  

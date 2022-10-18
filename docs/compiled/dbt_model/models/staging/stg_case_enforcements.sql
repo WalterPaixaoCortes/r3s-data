@@ -9,9 +9,9 @@ select
   activity_status_desc,
   activity_status_date::timestamp,
   enf_outcome_desc,
-  cast(total_penalty_assessed_amt as float) as total_penalty_assessed_amt,
-  cast(total_cost_recovery_amt as float) as total_cost_recovery_amt,
-  cast(total_comp_action_amt as float) as total_comp_action_amt,
+  cast(coalesce(total_penalty_assessed_amt,'0') as float) as total_penalty_assessed_amt,
+  cast(coalesce(total_cost_recovery_amt,'0') as float) as total_cost_recovery_amt,
+  cast(coalesce(total_comp_action_amt,'0') as float) as total_comp_action_amt,
   hq_division,
   voluntary_self_disclosure_flag,
   multimedia_flag

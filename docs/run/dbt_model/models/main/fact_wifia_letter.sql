@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."main"."fact_wifia_letter__dbt_tmp"
   as (
@@ -20,3 +22,4 @@ left join "postgres"."staging"."stg_wifia_loans_closed" wlc
 	on wps.borrower = wlc.borrower 
 	and wps.project_name = wlc.project_name
   );
+  

@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_wifia_loans_closed__dbt_tmp"
   as (
@@ -11,3 +13,4 @@
        initcap(coalesce("environmental compliance", 'Not Informed')) as environmental_compliance
 FROM "postgres"."source"."wifia_loans_closed"
   );
+  

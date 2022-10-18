@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_wifia_letters_submitted__dbt_tmp"
   as (
@@ -10,3 +12,4 @@
   "project description" as project_desc
 from "postgres"."source"."wifia_letters_submitted"
   );
+  

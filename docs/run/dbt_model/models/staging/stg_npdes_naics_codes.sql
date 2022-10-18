@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_npdes_naics_codes__dbt_tmp"
   as (
@@ -8,3 +10,4 @@
         now() as load_date
   from "postgres"."source"."npdes_naics"
   );
+  

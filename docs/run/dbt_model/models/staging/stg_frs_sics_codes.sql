@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_frs_sics_codes__dbt_tmp"
   as (
@@ -9,3 +11,4 @@
     trim(sic_code) as prg_sics_code
 from "postgres"."source"."frs_sic_codes"
   );
+  

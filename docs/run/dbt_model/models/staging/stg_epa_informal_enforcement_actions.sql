@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_epa_informal_enforcement_actions__dbt_tmp"
   as (
@@ -19,3 +21,4 @@ select 'INFORMAL' as enf_type,
        now() as load_date
   from "postgres"."source"."epa_informal_enforcement_actions" enf
   );
+  

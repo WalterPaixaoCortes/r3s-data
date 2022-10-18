@@ -4,7 +4,16 @@
     ]
 )}}
 
+with raw_data as (
 select
   case_number,
-  pollutant_desc
+   initcap(coalesce(pollutant_desc, 'Not Informed')) as pollutant_desc
 from {{source('source', 'case_pollutants')}}
+)
+select
+  case_number,
+  case when pollutant_desc = 'None' 
+    then 'Not Informed' 
+    else pollutant_desc 
+  end as pollutant_desc
+from raw_data  

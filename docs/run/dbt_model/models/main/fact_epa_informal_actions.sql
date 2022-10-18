@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."main"."fact_epa_informal_actions__dbt_tmp"
   as (
@@ -12,3 +14,4 @@
        enf_statute
   from "postgres"."staging"."stg_epa_informal_enforcement_actions"
   );
+  

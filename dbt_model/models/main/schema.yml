@@ -2,7 +2,34 @@ version: 2
 
 models:
   - name: fact_programs
+    columns:
+      - name: prg_acronym
+        tests:
+          - not_null
+      - name: prg_id
+        tests:
+          - not_null
+      - name: fac_id
+        tests:
+          - not_null
+      - name: fac_epa_region
+        tests:
+          - accepted_values:
+              values:
+                [
+                  "Region 01",
+                  "Region 02",
+                  "Region 03",
+                  "Region 04",
+                  "Region 05",
+                  "Region 06",
+                  "Region 07",
+                  "Region 08",
+                  "Region 09",
+                  "Region 10",
+                  "Not Informed",
+                ]
   - name: fact_epa_informal_actions
   - name: fact_cases
   - name: fact_case_conclusions
-  - name: fact_wifia_letters
+  - name: fact_wifia_letter

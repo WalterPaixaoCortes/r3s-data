@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."main"."fact_programs__dbt_tmp"
   as (
@@ -25,3 +27,4 @@ LEFT JOIN "postgres"."seed_data"."src_states" st
 LEFT JOIN "postgres"."staging"."stg_naics_codes" naid
     ON nai.prg_naics_code = naid.naics_code
   );
+  

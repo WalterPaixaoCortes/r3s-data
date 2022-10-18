@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_case_facilities__dbt_tmp"
   as (
@@ -14,3 +16,4 @@ select
   primary_naics_code
 from "postgres"."source"."case_facilities"
   );
+  

@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_frs_naics_codes__dbt_tmp"
   as (
@@ -11,3 +13,4 @@ select
     trim(naics_code) as prg_naics_code
 from "postgres"."source"."frs_naics_codes"
   );
+  

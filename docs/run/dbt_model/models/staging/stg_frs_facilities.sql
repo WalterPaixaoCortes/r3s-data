@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_frs_facilities__dbt_tmp"
   as (
@@ -22,3 +24,4 @@ with raw_data as (
 select *
 from raw_data
   );
+  

@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_case_violations__dbt_tmp"
   as (
@@ -10,3 +12,4 @@ select
   violation_type_desc
 from "postgres"."source"."case_violations"
   );
+  

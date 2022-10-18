@@ -5,14 +5,17 @@
 )}}
 
 select
-  case_number,
-  enf_conclusion_action_code,
-  primary_law,
-  coalesce('Region ' || trim(region_code), 'Not Informed') as region_code,
-  activity_type_code,
-  cast(fed_penalty_assessed_amt as float) as fed_penalty_assessed_amt,
-  cast(state_local_penalty_amt as float) as state_local_penalty_amt,
-  cast(sep_amt as float) as sep_amt,
-  cast(compliance_action_cost as float) as compliance_action_cost,
-  cast(cost_recovery_awarded_amt as float) as cost_recovery_awarded_amt
-from {{source('source', 'case_enforcement_conclusions')}}
+  c.case_number,
+  c.enf_conclusion_action_code,
+  c.primary_law,
+  a.description as primary_law_desc,
+  coalesce('Region ' || trim(c.region_code), 'Not Informed') as region_code,
+  c.activity_type_code,
+  cast(coalesce(c.fed_penalty_assessed_amt,'0') as float) as fed_penalty_assessed_amt,
+  cast(coalesce(c.state_local_penalty_amt,'0') as float) as state_local_penalty_amt,
+  cast(coalesce(c.sep_amt,'0') as float) as sep_amt,
+  cast(coalesce(c.compliance_action_cost,'0') as float) as compliance_action_cost,
+  cast(coalesce(c.cost_recovery_awarded_amt,'0') as float) as cost_recovery_awarded_amt
+from {{source('source', 'case_enforcement_conclusions')}} c
+  left join {{ref('acronyms')}} a
+    on c.primary_law = a.acronym

@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_npdes_formal_enforcement_actions__dbt_tmp"
   as (
@@ -18,3 +20,4 @@
        now() as load_date
   from "postgres"."source"."npdes_formal_enforcement_actions"
   );
+  

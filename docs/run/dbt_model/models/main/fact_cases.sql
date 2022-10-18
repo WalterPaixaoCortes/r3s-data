@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."main"."fact_cases__dbt_tmp"
   as (
@@ -61,3 +63,4 @@ from "postgres"."staging"."stg_case_enforcements" c
   inner join "postgres"."staging"."stg_case_facilities" fac
     on c.case_number = fac.case_number
   );
+  

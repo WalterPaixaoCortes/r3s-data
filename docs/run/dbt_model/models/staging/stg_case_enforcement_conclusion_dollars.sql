@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."staging"."stg_case_enforcement_conclusion_dollars__dbt_tmp"
   as (
@@ -12,3 +14,4 @@ SELECT case_number,
        cast(coalesce(sep_cost,'0') as float) as sep_cost
   FROM "postgres"."source"."case_enforcement_conclusion_dollars"
   );
+  

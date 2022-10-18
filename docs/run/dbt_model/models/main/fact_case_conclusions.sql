@@ -1,4 +1,6 @@
 
+  
+    
 
   create  table "postgres"."main"."fact_case_conclusions__dbt_tmp"
   as (
@@ -26,3 +28,4 @@ from "postgres"."staging"."stg_case_enforcement_conclusions" con
   inner join "postgres"."staging"."stg_case_enforcement_conclusion_complying_actions" act
     on con.case_number = act.case_number
   );
+  
