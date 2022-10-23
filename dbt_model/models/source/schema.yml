@@ -4,6 +4,7 @@ sources:
   - name: source
     tables:
       - name: wifia_loans_closed
+        tags: ["WIFIA"]
         columns:
          - name: seq
          - name: borrower
@@ -13,6 +14,7 @@ sources:
          - name: loan amount
          - name: environmental compliance
       - name: wifia_projects_selected
+        tags: ["WIFIA"]
         columns:
          - name: seq
          - name: fiscal year
@@ -22,13 +24,45 @@ sources:
          - name: state
          - name: approval status
       - name: wifia_letters_submitted
+        tags: ["WIFIA"]
         columns:
          - name: seq
          - name: fiscal year
          - name: prospective borrower
          - name: state
          - name: project description
+      - name: icis_master_general_permits
+        tags: ["NPDES"]
+        columns:
+         - name: activity_id
+         - name: external_permit_nmbr
+         - name: version_nmbr
+         - name: facility_type_indicator
+         - name: permit_type_code
+         - name: major_minor_status_flag
+         - name: permit_status_code
+         - name: total_design_flow_nmbr
+         - name: actual_average_flow_nmbr
+         - name: state_water_body
+         - name: state_water_body_name
+         - name: permit_name
+         - name: agency_type_code
+         - name: original_issue_date
+         - name: issue_date
+         - name: issuing_agency
+         - name: effective_date
+         - name: expiration_date
+         - name: retirement_date
+         - name: termination_date
+         - name: permit_comp_status_flag
+         - name: rnc_tracking_flag
+         - name: master_external_permit_nmbr
+         - name: tmdl_interface_flag
+         - name: edmr_authorization_flag
+         - name: pretreatment_indicator_code
+         - name: rad_wbd_huc12s
       - name: epa_informal_enforcement_actions
+        tags: ["not defined"]
         columns:
          - name: pgm_sys_id
          - name: registry_id
@@ -40,6 +74,7 @@ sources:
          - name: enf_identifier
          - name: statute
       - name: case_enforcement_conclusion_sep
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -50,6 +85,7 @@ sources:
          - name: sep_text
          - name: sep_amt
       - name: case_related_activities
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -57,12 +93,14 @@ sources:
          - name: activity_type_code
          - name: activity_type_desc
       - name: case_relief_sought
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
          - name: relief_code
          - name: relief_desc
       - name: case_pollutants
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -70,6 +108,7 @@ sources:
          - name: pollutant_desc
          - name: chemical_abstract_service_nmbr
       - name: case_penalties
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -81,12 +120,14 @@ sources:
          - name: state_local_cost_recovery_amt
          - name: penalty_collected_amt
       - name: npdes_naics
+        tags: ["NPDES"]
         columns:
          - name: npdes_id
          - name: naics_code
          - name: naics_desc
          - name: primary_indicator_flag
       - name: case_enforcement_conclusion_dollars
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -98,6 +139,7 @@ sources:
          - name: sep_cost
          - name: penalty_collected_amt
       - name: case_violations
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -105,6 +147,7 @@ sources:
          - name: rank_order
          - name: violation_type_desc
       - name: case_enforcement_conclusion_pollutants
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -120,12 +163,14 @@ sources:
          - name: media_desc
          - name: sep_or_comp_flag
       - name: case_enforcement_type
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
          - name: enf_type_code
          - name: enf_type_desc
       - name: case_defendants
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -133,6 +178,7 @@ sources:
          - name: named_in_complaint_flag
          - name: named_in_settlement_flag
       - name: npdes_formal_enforcement_actions
+        tags: ["NPDES"]
         columns:
          - name: npdes_id
          - name: enf_identifier
@@ -145,6 +191,7 @@ sources:
          - name: fed_penalty_assessed_amt
          - name: state_local_penalty_amt
       - name: case_law_sections
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -153,6 +200,7 @@ sources:
          - name: law_section_code
          - name: law_section_desc
       - name: case_enforcement_conclusions
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -171,13 +219,36 @@ sources:
          - name: sep_amt
          - name: compliance_action_cost
          - name: cost_recovery_awarded_amt
+      - name: npdes_cs_violations
+        tags: ["NPDES"]
+        columns:
+         - name: npdes_id
+         - name: npdes_violation_id
+         - name: violation_type_code
+         - name: comp_schedule_event_id
+         - name: comp_schedule_nmbr
+         - name: violation_code
+         - name: violation_desc
+         - name: schedule_event_code
+         - name: schedule_event_desc
+         - name: schedule_date
+         - name: actual_date
+         - name: rnc_detection_code
+         - name: rnc_detection_desc
+         - name: rnc_detection_date
+         - name: rnc_resolution_code
+         - name: rnc_resolution_desc
+         - name: rnc_resolution_date
+         - name: report_received_date
       - name: npdes_sics
+        tags: ["NPDES"]
         columns:
          - name: npdes_id
          - name: sic_code
          - name: sic_desc
          - name: primary_indicator_flag
       - name: case_facilities
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -190,6 +261,7 @@ sources:
          - name: primary_sic_code
          - name: primary_naics_code
       - name: case_enforcement_conclusion_complying_actions
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
@@ -199,25 +271,81 @@ sources:
          - name: comp_action_type_code
          - name: comp_action_type_desc
          - name: comp_action_category_type_desc
+      - name: npdes_perm_components
+        tags: ["NPDES"]
+        columns:
+         - name: external_permit_nmbr
+         - name: component_type_code
+         - name: component_type_desc
+      - name: npdes_perm_feature_coords
+        tags: ["NPDES"]
+        columns:
+         - name: external_permit_nmbr
+         - name: perm_feature_nmbr
+         - name: perm_feature_id
+         - name: latitude_measure
+         - name: longitude_measure
       - name: case_programs
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: case_number
          - name: program_code
          - name: program_desc
       - name: frs_sic_codes
+        tags: ["FRS"]
         columns:
          - name: pgm_sys_id
          - name: pgm_sys_acnrm
          - name: sic_code
          - name: registry_id
+      - name: npdes_se_violations
+        tags: ["NPDES"]
+        columns:
+         - name: npdes_id
+         - name: npdes_violation_id
+         - name: violation_type_code
+         - name: violation_code
+         - name: violation_desc
+         - name: single_event_violation_date
+         - name: single_event_end_date
+         - name: single_event_violation_comment
+         - name: single_event_agency_type_code
+         - name: rnc_detection_code
+         - name: rnc_detection_desc
+         - name: rnc_detection_date
+         - name: rnc_resolution_code
+         - name: rnc_resolution_desc
+         - name: rnc_resolution_date
+      - name: npdes_ps_violations
+        tags: ["NPDES"]
+        columns:
+         - name: npdes_id
+         - name: npdes_violation_id
+         - name: perm_schedule_event_id
+         - name: violation_type_code
+         - name: violation_code
+         - name: violation_desc
+         - name: schedule_event_code
+         - name: schedule_event_desc
+         - name: schedule_date
+         - name: rnc_detection_code
+         - name: rnc_detection_desc
+         - name: rnc_detection_date
+         - name: rnc_resolution_code
+         - name: rnc_resolution_desc
+         - name: rnc_resolution_date
+         - name: actual_date
+         - name: report_received_date
       - name: frs_naics_codes
+        tags: ["FRS"]
         columns:
          - name: pgm_sys_id
          - name: pgm_sys_acnrm
          - name: naics_code
          - name: registry_id
       - name: case_enforcements
+        tags: ["ICIS-FE&C"]
         columns:
          - name: activity_id
          - name: activity_name
@@ -245,6 +373,7 @@ sources:
          - name: multimedia_flag
          - name: enf_summary_text
       - name: npdes_informal_enforcement_actions
+        tags: ["NPDES"]
         columns:
          - name: npdes_id
          - name: registry_id
@@ -257,7 +386,80 @@ sources:
          - name: achieved_date
          - name: enf_identifier
          - name: official_flg
+      - name: icis_facilities
+        tags: ["NPDES"]
+        columns:
+         - name: icis_facility_interest_id
+         - name: npdes_id
+         - name: facility_uin
+         - name: facility_type_code
+         - name: facility_name
+         - name: location_address
+         - name: supplemental_address_text
+         - name: city
+         - name: county_code
+         - name: state_code
+         - name: zip
+         - name: geocode_latitude
+         - name: geocode_longitude
+         - name: impaired_waters
+      - name: npdes_inspections
+        tags: ["NPDES"]
+        columns:
+         - name: registry_id
+         - name: npdes_id
+         - name: activity_id
+         - name: activity_type_code
+         - name: comp_monitor_type_code
+         - name: comp_monitor_type_desc
+         - name: state_epa_flag
+         - name: actual_begin_date
+         - name: actual_end_date
+         - name: activity_outcome_code
+         - name: activity_outcome_desc
+      - name: npdes_qncr_history
+        tags: ["NPDES"]
+        columns:
+         - name: npdes_id
+         - name: yearqtr
+         - name: hlrnc
+         - name: nume90q
+         - name: numcvdt
+         - name: numsvcd
+         - name: numpsch
+      - name: icis_permits
+        tags: ["NPDES"]
+        columns:
+         - name: activity_id
+         - name: external_permit_nmbr
+         - name: version_nmbr
+         - name: facility_type_indicator
+         - name: permit_type_code
+         - name: major_minor_status_flag
+         - name: permit_status_code
+         - name: total_design_flow_nmbr
+         - name: actual_average_flow_nmbr
+         - name: state_water_body
+         - name: state_water_body_name
+         - name: permit_name
+         - name: agency_type_code
+         - name: original_issue_date
+         - name: issue_date
+         - name: issuing_agency
+         - name: effective_date
+         - name: expiration_date
+         - name: retirement_date
+         - name: termination_date
+         - name: permit_comp_status_flag
+         - name: dmr_non_receipt_flag
+         - name: rnc_tracking_flag
+         - name: master_external_permit_nmbr
+         - name: tmdl_interface_flag
+         - name: edmr_authorization_flag
+         - name: pretreatment_indicator_code
+         - name: rad_wbd_huc12s
       - name: frs_facilities
+        tags: ["FRS"]
         columns:
          - name: fac_name
          - name: fac_street
@@ -269,7 +471,60 @@ sources:
          - name: fac_epa_region
          - name: latitude_measure
          - name: longitude_measure
+      - name: npdes_outfalls_layer
+        tags: ["NPDES"]
+        columns:
+         - name: external_permit_nmbr
+         - name: facility_name
+         - name: location_address
+         - name: city
+         - name: state_code
+         - name: zip
+         - name: fac_county_name
+         - name: permit_name
+         - name: facility_type_code
+         - name: facility_type_desc
+         - name: permit_type_code
+         - name: permit_status_code
+         - name: permit_type_desc
+         - name: permit_status_desc
+         - name: sic_codes
+         - name: sic_descriptions
+         - name: total_design_flow_nmbr
+         - name: naics_codes
+         - name: fac_federal_agency_name
+         - name: cwp_current_snc_status
+         - name: cwp_current_viol
+         - name: cwa_current_status
+         - name: cwp_date_last_inspection
+         - name: date_last_formal_ea
+         - name: dmr_pounds
+         - name: lim_pollutant
+         - name: fac_indian_spatial_flg
+         - name: fac_derived_tribes
+         - name: permit_effective_date
+         - name: permit_expiration_date
+         - name: permit_termination_date
+         - name: permit_components
+         - name: perm_feature_nmbr
+         - name: major_minor_flag
+         - name: state_water_body_name
+         - name: latitude83
+         - name: longitude83
+         - name: sub_type_desc
+         - name: latlong_type
+      - name: npdes_violation_enforcements
+        tags: ["NPDES"]
+        columns:
+         - name: npdes_violation_id
+         - name: violation_code
+         - name: violation_desc
+         - name: activity_id
+         - name: activity_type_code
+         - name: activity_type_desc
+         - name: enf_identifier
       - name: frs_program_links
+        tags: ["FRS"]
         columns:
          - name: pgm_sys_acrnm
          - name: pgm_sys_id
@@ -284,3 +539,101 @@ sources:
          - name: state_name
          - name: country_name
          - name: postal_code
+      - name: npdes_limits
+        tags: ["NPDES"]
+        columns:
+         - name: activity_id
+         - name: external_permit_nmbr
+         - name: version_nmbr
+         - name: perm_feature_id
+         - name: perm_feature_nmbr
+         - name: perm_feature_type_code
+         - name: limit_set_id
+         - name: limit_set_designator
+         - name: limit_set_schedule_id
+         - name: limit_set_status_flag
+         - name: limit_id
+         - name: limit_begin_date
+         - name: limit_end_date
+         - name: nmbr_of_submission
+         - name: nmbr_of_report
+         - name: parameter_code
+         - name: parameter_desc
+         - name: monitoring_location_code
+         - name: stay_type_code
+         - name: limit_value_id
+         - name: limit_value_type_code
+         - name: limit_value_nmbr
+         - name: limit_unit_code
+         - name: limit_unit_desc
+         - name: standard_unit_code
+         - name: standard_unit_desc
+         - name: limit_value_standard_units
+         - name: statistical_base_code
+         - name: statistical_base_type_code
+         - name: limit_value_qualifier_code
+         - name: stay_value_nmbr
+         - name: limit_type_code
+         - name: optional_monitoring_flag
+         - name: limit_sample_type_code
+         - name: limit_freq_of_analysis_code
+         - name: all_months_limit
+         - name: jan
+         - name: feb
+         - name: mar
+         - name: apr
+         - name: may
+         - name: jun
+         - name: jul
+         - name: aug
+         - name: sep
+         - name: oct
+         - name: nov
+         - name: dec
+         - name: limit_season_id
+      - name: npdes_eff_violations
+        tags: ["NPDES"]
+        columns:
+         - name: npdes_id
+         - name: version_nmbr
+         - name: activity_id
+         - name: npdes_violation_id
+         - name: perm_feature_nmbr
+         - name: permit_activity_id
+         - name: limit_set_designator
+         - name: monitoring_location_code
+         - name: dmr_form_value_id
+         - name: dmr_value_nmbr
+         - name: dmr_value_id
+         - name: dmr_parameter_id
+         - name: nodi_code
+         - name: adjusted_dmr_value_nmbr
+         - name: limit_value_standard_units
+         - name: violation_type_code
+         - name: violation_type_desc
+         - name: violation_code
+         - name: violation_desc
+         - name: parameter_code
+         - name: parameter_desc
+         - name: standard_unit_code
+         - name: standard_unit_desc
+         - name: monitoring_period_end_date
+         - name: nmbr_of_report
+         - name: exceedence_pct
+         - name: value_qualifier_code
+         - name: unit_code
+         - name: value_received_date
+         - name: days_late
+         - name: adjusted_dmr_standard_units
+         - name: limit_id
+         - name: dmr_value_standard_units
+         - name: value_type_code
+         - name: rnc_detection_code
+         - name: rnc_detection_desc
+         - name: rnc_detection_date
+         - name: rnc_resolution_code
+         - name: rnc_resolution_desc
+         - name: rnc_resolution_date
+         - name: statistical_base_code
+         - name: statistical_base_monthly_avg
+         - name: statistical_base_short_desc

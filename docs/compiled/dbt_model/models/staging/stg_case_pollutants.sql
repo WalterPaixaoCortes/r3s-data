@@ -3,8 +3,8 @@
 with raw_data as (
 select
   case_number,
-   initcap(coalesce(pollutant_desc, 'Not Informed')) as pollutant_desc
-from "postgres"."source"."case_pollutants"
+   coalesce(pollutant_desc, 'Not Informed') as pollutant_desc
+from source."case_pollutants"
 )
 select
   case_number,

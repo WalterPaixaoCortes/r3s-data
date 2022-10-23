@@ -10,6 +10,6 @@ SELECT
   trim(prg.state_name) as prg_state_name,
   trim(prg.country_name) as prg_country_name,
   trim(prg.postal_code) as prg_zipcode,
-  now() AS load_date
+  datetime() AS load_date
 FROM
-  "postgres"."source"."frs_program_links" prg
+  source."frs_program_links" prg

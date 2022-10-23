@@ -12,5 +12,5 @@ select 'INFORMAL' as enf_type,
   end as enf_achieved_date,
        trim(enf.ENF_IDENTIFIER) as enf_identifier,
        trim(enf.STATUTE) as enf_statute,
-       now() as load_date
-  from "postgres"."source"."epa_informal_enforcement_actions" enf
+       datetime() as load_date
+  from source."epa_informal_enforcement_actions" enf

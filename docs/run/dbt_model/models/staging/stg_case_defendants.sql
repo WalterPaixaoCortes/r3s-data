@@ -1,14 +1,12 @@
 
   
-    
-
-  create  table "postgres"."staging"."stg_case_defendants__dbt_tmp"
-  as (
-    
+    create  table staging."stg_case_defendants"
+      as
+        
 
 select
   case_number,
-  initcap(coalesce(defendant_name, 'Not Informed')) as defendant_name
-from "postgres"."source"."case_defendants"
-  );
+  coalesce(defendant_name, 'Not Informed') as defendant_name
+from source."case_defendants"
+
   

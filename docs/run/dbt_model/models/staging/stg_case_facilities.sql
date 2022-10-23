@@ -1,10 +1,8 @@
 
   
-    
-
-  create  table "postgres"."staging"."stg_case_facilities__dbt_tmp"
-  as (
-    
+    create  table staging."stg_case_facilities"
+      as
+        
 
 select
   case_number,
@@ -14,6 +12,6 @@ select
   zip,
   primary_sic_code,
   primary_naics_code
-from "postgres"."source"."case_facilities"
-  );
+from source."case_facilities"
+
   

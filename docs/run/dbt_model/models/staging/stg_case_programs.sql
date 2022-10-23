@@ -1,14 +1,12 @@
 
   
-    
-
-  create  table "postgres"."staging"."stg_case_programs__dbt_tmp"
-  as (
-    
+    create  table staging."stg_case_programs"
+      as
+        
 
 select
   case_number,
   program_desc
-from "postgres"."source"."case_programs"
-  );
+from source."case_programs"
+
   

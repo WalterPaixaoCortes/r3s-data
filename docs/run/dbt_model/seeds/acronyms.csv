@@ -2,13 +2,31 @@
     
     
     
-    create table "postgres"."seed_data"."acronyms" ("acronym" text,"description" text)
+    create table seed_data."acronyms" ("acronym" char(10),"description" text)
   ;
     -- dbt seed --
     
-          insert into "postgres"."seed_data"."acronyms" ("acronym", "description") values
-          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
-      
+            insert into seed_data.acronyms ("acronym", "description") values
+            (
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?),(
+                    ?,
+                    ?)
+        
 
 ;
   

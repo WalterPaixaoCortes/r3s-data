@@ -7,7 +7,7 @@
 with raw_data as (
 select
   case_number,
-   initcap(coalesce(pollutant_desc, 'Not Informed')) as pollutant_desc
+   {{ capitalize('pollutant_desc')}} as pollutant_desc
 from {{source('source', 'case_pollutants')}}
 )
 select

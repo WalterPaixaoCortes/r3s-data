@@ -11,5 +11,5 @@ select 'INFORMAL' as enf_type,
        trim(enf_identifier) as enf_identifier,
        trim(activity_id) as activity_id,
        trim(official_flg) as official_flg,
-       now() as load_date
-  from "postgres"."source"."npdes_informal_enforcement_actions"
+       datetime() as load_date
+  from source."npdes_informal_enforcement_actions"

@@ -1,16 +1,14 @@
 
   
-    
-
-  create  table "postgres"."staging"."stg_case_pollutants__dbt_tmp"
-  as (
-    
+    create  table staging."stg_case_pollutants"
+      as
+        
 
 with raw_data as (
 select
   case_number,
-   initcap(coalesce(pollutant_desc, 'Not Informed')) as pollutant_desc
-from "postgres"."source"."case_pollutants"
+   coalesce(pollutant_desc, 'Not Informed') as pollutant_desc
+from source."case_pollutants"
 )
 select
   case_number,
@@ -19,5 +17,5 @@ select
     else pollutant_desc 
   end as pollutant_desc
 from raw_data
-  );
+
   

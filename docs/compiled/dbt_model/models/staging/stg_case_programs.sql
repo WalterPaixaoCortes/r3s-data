@@ -3,4 +3,4 @@
 select
   case_number,
   program_desc
-from "postgres"."source"."case_programs"
+from source."case_programs"

@@ -2,14 +2,17 @@ version: 2
 
 models:
   - name: stg_case_defendants
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: defendant_name
   - name: stg_case_enforcement_conclusion_complying_actions
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: comp_action_category_type_desc
   - name: stg_case_enforcement_conclusion_dollars
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: state_local_penalty_amt
@@ -18,6 +21,7 @@ models:
       - name: compliance_action_cost
       - name: sep_cost
   - name: stg_case_enforcement_conclusion_pollutants
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: pollutant_name
@@ -25,11 +29,13 @@ models:
       - name: pollutant_unit_code
       - name: media_code
   - name: stg_case_enforcement_conclusion_sep
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: sep_category_desc
       - name: sep_amt
   - name: stg_case_enforcement_conclusions
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: enf_conclusion_action_code
@@ -42,10 +48,12 @@ models:
       - name: compliance_action_cost
       - name: cost_recovery_awarded_amt
   - name: stg_case_enforcement_type
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: enf_type_desc
   - name: stg_case_enforcements
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: state_code
@@ -62,6 +70,7 @@ models:
       - name: voluntary_self_disclosure_flag
       - name: multimedia_flag
   - name: stg_case_facilities
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: registry_id
@@ -71,10 +80,12 @@ models:
       - name: primary_sic_code
       - name: primary_naics_code
   - name: stg_case_law_sections
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: statute_code
   - name: stg_case_penalties
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: fed_penalty
@@ -84,28 +95,34 @@ models:
       - name: federal_cost_recovery_amt
       - name: state_local_cost_recovery_amt
   - name: stg_case_pollutants
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: pollutant_desc
   - name: stg_case_programs
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: program_desc
   - name: stg_case_related_activities
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: activity_status_date
       - name: activity_type_code
   - name: stg_case_relief_sought
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: relief_desc
   - name: stg_case_violations
+    tags: ["ICIS-FE&C"]
     columns:
       - name: case_number
       - name: violation_type_code
       - name: violation_type_desc
   - name: stg_epa_informal_enforcement_actions
+    tags: ["not defined"]
     columns:
       - name: enf_type
       - name: prg_id
@@ -119,6 +136,7 @@ models:
       - name: enf_statute
       - name: load_date
   - name: stg_frs_facilities
+    tags: ["FRS"]
     columns:
       - name: fac_id
       - name: fac_name
@@ -132,12 +150,14 @@ models:
       - name: fac_longitude
       - name: load_date
   - name: stg_frs_naics_codes
+    tags: ["FRS"]
     columns:
       - name: fac_id
       - name: prg_id
       - name: prg_acronym
       - name: prg_naics_code
   - name: stg_frs_programs
+    tags: ["FRS"]
     columns:
       - name: prg_id
       - name: fac_id
@@ -150,16 +170,19 @@ models:
       - name: prg_zipcode
       - name: load_date
   - name: stg_frs_sics_codes
+    tags: ["FRS"]
     columns:
       - name: prg_id
       - name: fac_id
       - name: prg_acronym
       - name: prg_sics_code
   - name: stg_naics_codes
+    tags: ["FRS"]
     columns:
       - name: naics_code
       - name: naics_desc
   - name: stg_npdes_formal_enforcement_actions
+    tags: ["NPDES"]
     columns:
       - name: enf_type
       - name: npdes_id
@@ -174,6 +197,7 @@ models:
       - name: state_local_penalty_amt
       - name: load_date
   - name: stg_npdes_informal_enforcement_actions
+    tags: ["NPDES"]
     columns:
       - name: enf_type
       - name: fac_id
@@ -188,18 +212,21 @@ models:
       - name: official_flg
       - name: load_date
   - name: stg_npdes_naics_codes
+    tags: ["NPDES"]
     columns:
       - name: naics_code
       - name: naics_desc
       - name: primary_indicator_flag
       - name: load_date
   - name: stg_npdes_sic_codes
+    tags: ["NPDES"]
     columns:
       - name: sic_code
       - name: sic_desc
       - name: primary_indicator_flag
       - name: load_date
   - name: stg_wifia_loans_closed
+    tags: ["WIFIA"]
     columns:
       - name: seq
       - name: borrower
@@ -209,6 +236,7 @@ models:
       - name: loan_amount
       - name: environmental_compliance
   - name: stg_wifia_projects_selected
+    tags: ["WIFIA"]
     columns:
       - name: seq
       - name: fiscal_year
@@ -218,6 +246,7 @@ models:
       - name: state
       - name: approval_status
   - name: stg_wifia_letters_submitted
+    tags: ["WIFIA"]
     columns:
       - name: seq
       - name: fiscal_year
