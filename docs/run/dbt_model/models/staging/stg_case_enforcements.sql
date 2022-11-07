@@ -1,14 +1,16 @@
 
   
-    create  table staging."stg_case_enforcements"
-      as
-        
+    
+
+  create  table "postgres"."staging"."stg_case_enforcements__dbt_tmp"
+  as (
+    
 
 select 
-  case_number,
+  distinct case_number,
   state_code,
   coalesce('Region ' || trim(region_code), 'Not Informed') as region_code,
-  coalesce(case_name, 'Not Informed') as case_name,
+  initcap(coalesce(case_name, 'Not Informed')) as case_name,
   activity_type_code,
   activity_status_desc,
   case when coalesce(activity_status_date,'') = '' then null
@@ -21,6 +23,6 @@ select
   hq_division,
   voluntary_self_disclosure_flag,
   multimedia_flag
-from source."case_enforcements"
-
+from "postgres"."source"."case_enforcements"
+  );
   

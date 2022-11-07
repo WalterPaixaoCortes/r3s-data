@@ -1,3 +1,5 @@
+
+
 SELECT npdes_id,
        activity_id,
        npdes_violation_id,
@@ -24,4 +26,4 @@ SELECT npdes_id,
        else substr(rnc_resolution_date,7) || '-' || substr(rnc_resolution_date,1,2) || '-' || substr(rnc_resolution_date,4,2) || ' 00:00:00'
   end as rnc_resolution_date,
        statistical_base_code
-  FROM source."npdes_eff_violations"
+  FROM "postgres"."source"."npdes_eff_violations"

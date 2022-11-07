@@ -1,3 +1,5 @@
+
+
 select
   c.case_number,
   c.state_code,
@@ -5,7 +7,7 @@ select
   c.case_name,
   c.activity_type_code,
   c.activity_status_desc,
-  c.activity_status_date,
+  c.activity_status_date::timestamp,
   c.enf_outcome_desc,
   c.total_penalty_assessed_amt,
   c.total_cost_recovery_amt,
@@ -27,32 +29,33 @@ select
   def.defendant_name,
   pol.pollutant_desc,
   prg.program_desc,
-  rlt.activity_status_date as rlt_activity_status_date,
+  rlt.activity_status_date::timestamp as rlt_activity_status_date,
   rlt.activity_type_code as rlt_activity_type_code,
   fac.registry_id,
   fac.city,
   fac.state_code as fac_state_code,
   fac.zip,
   fac.primary_sic_code,
-  fac.primary_naics_code
-from staging."stg_case_enforcements" c
-  inner join staging."stg_case_enforcement_type" et
+  fac.primary_naics_code,
+  fac.fac_name
+from "postgres"."staging"."stg_case_enforcements" c
+  inner join "postgres"."staging"."stg_case_enforcement_type" et
     on c.case_number = et.case_number
-  inner join staging."stg_case_violations" v 
+  inner join "postgres"."staging"."stg_case_violations" v 
     on c.case_number = v.case_number
-  inner join staging."stg_case_relief_sought" crs
+  inner join "postgres"."staging"."stg_case_relief_sought" crs
     on c.case_number = crs.case_number
-  inner join staging."stg_case_penalties" pen
+  inner join "postgres"."staging"."stg_case_penalties" pen
     on c.case_number = pen.case_number
-  inner join staging."stg_case_law_sections" lsc
+  inner join "postgres"."staging"."stg_case_law_sections" lsc
     on c.case_number = lsc.case_number
-  inner join staging."stg_case_defendants" def
+  inner join "postgres"."staging"."stg_case_defendants" def
     on c.case_number = def.case_number
-  inner join staging."stg_case_pollutants" pol
+  inner join "postgres"."staging"."stg_case_pollutants" pol
     on c.case_number = pol.case_number
-  inner join staging."stg_case_programs" prg
+  inner join "postgres"."staging"."stg_case_programs" prg
     on c.case_number = prg.case_number
-  inner join staging."stg_case_related_activities" rlt
+  inner join "postgres"."staging"."stg_case_related_activities" rlt
     on c.case_number = rlt.case_number    
-  inner join staging."stg_case_facilities" fac
+  inner join "postgres"."staging"."stg_case_facilities" fac
     on c.case_number = fac.case_number

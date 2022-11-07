@@ -1,7 +1,7 @@
 
 
 select
-  case_number,
+  distinct case_number,
   activity_status_date,
   activity_type_code
-from source."case_related_activities"
+from "postgres"."source"."case_related_activities"

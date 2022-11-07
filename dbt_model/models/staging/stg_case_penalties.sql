@@ -5,7 +5,7 @@
 )}}
 
 select
-  case_number,
+  distinct case_number,
   fed_penalty,
   st_lcl_penalty,
   total_sep,

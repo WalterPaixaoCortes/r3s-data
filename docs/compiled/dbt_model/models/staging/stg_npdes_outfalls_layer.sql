@@ -22,4 +22,4 @@ SELECT external_permit_nmbr as npdes_id,
        state_water_body_name,
        sub_type_desc,
        latlong_type
-  FROM source."npdes_outfalls_layer"
+  FROM "postgres"."source"."npdes_outfalls_layer"

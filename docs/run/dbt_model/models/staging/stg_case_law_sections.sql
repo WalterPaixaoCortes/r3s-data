@@ -1,12 +1,14 @@
 
   
-    create  table staging."stg_case_law_sections"
-      as
-        
+    
+
+  create  table "postgres"."staging"."stg_case_law_sections__dbt_tmp"
+  as (
+    
 
 select
-  case_number,
+  distinct case_number,
   statute_code
-from source."case_law_sections"
-
+from "postgres"."source"."case_law_sections"
+  );
   

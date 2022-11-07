@@ -1,3 +1,9 @@
+{{ config(
+    indexes=[
+      {'columns': ['case_number'], 'type': 'hash'},
+    ]
+)}}
+
 select
   con.*,
   sep.sep_category_desc,

@@ -1,7 +1,7 @@
 
 
 select
-  case_number,
+  distinct case_number,
   violation_type_code,
   violation_type_desc
-from source."case_violations"
+from "postgres"."source"."case_violations"

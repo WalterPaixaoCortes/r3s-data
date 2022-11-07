@@ -1,6 +1,6 @@
 
 
 select
-  case_number,
+  distinct case_number,
   program_desc
-from source."case_programs"
+from "postgres"."source"."case_programs"

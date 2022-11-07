@@ -5,7 +5,7 @@
 )}}
 
 select
-  c.case_number,
+  distinct c.case_number,
   c.enf_conclusion_action_code,
   c.primary_law,
   a.description as primary_law_desc,

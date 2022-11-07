@@ -1,8 +1,10 @@
 
   
-    create  table staging."stg_npdes_ps_violations"
-      as
-        SELECT npdes_id,
+    
+
+  create  table "postgres"."staging"."stg_npdes_ps_violations__dbt_tmp"
+  as (
+    SELECT npdes_id,
        npdes_violation_id,
        violation_type_code,
        violation_desc,
@@ -14,6 +16,6 @@
        case when coalesce(rnc_resolution_date,'') = '' then null
        else substr(rnc_resolution_date,7) || '-' || substr(rnc_resolution_date,1,2) || '-' || substr(rnc_resolution_date,4,2) || ' 00:00:00'
   end as rnc_resolution_date
-  FROM source."npdes_ps_violations"
-
+  FROM "postgres"."source"."npdes_ps_violations"
+  );
   

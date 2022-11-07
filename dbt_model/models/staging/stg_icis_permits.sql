@@ -1,4 +1,4 @@
-SELECT external_permit_nmbr as npdes_id,
+SELECT distinct external_permit_nmbr as npdes_id,
        facility_type_indicator,
        permit_type_code,
        major_minor_status_flag,

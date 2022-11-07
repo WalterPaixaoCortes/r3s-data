@@ -5,7 +5,7 @@
     ]
 )}}
 
-select  
+select distinct 
     trim(registry_id) as fac_id,
     trim(pgm_sys_id) as prg_id,
     trim(pgm_sys_acnrm) as prg_acronym,

@@ -1,3 +1,9 @@
+{{ config(
+    indexes=[
+      {'columns': ['case_number'], 'type': 'hash'},
+    ]
+)}}
+
 select
   c.case_number,
   c.state_code,
@@ -5,7 +11,7 @@ select
   c.case_name,
   c.activity_type_code,
   c.activity_status_desc,
-  c.activity_status_date,
+  c.activity_status_date::timestamp,
   c.enf_outcome_desc,
   c.total_penalty_assessed_amt,
   c.total_cost_recovery_amt,
@@ -27,14 +33,15 @@ select
   def.defendant_name,
   pol.pollutant_desc,
   prg.program_desc,
-  rlt.activity_status_date as rlt_activity_status_date,
+  rlt.activity_status_date::timestamp as rlt_activity_status_date,
   rlt.activity_type_code as rlt_activity_type_code,
   fac.registry_id,
   fac.city,
   fac.state_code as fac_state_code,
   fac.zip,
   fac.primary_sic_code,
-  fac.primary_naics_code
+  fac.primary_naics_code,
+  fac.fac_name
 from {{ref('stg_case_enforcements')}} c
   inner join {{ref('stg_case_enforcement_type')}} et
     on c.case_number = et.case_number

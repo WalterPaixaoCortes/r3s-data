@@ -1,3 +1,6 @@
+
+{{ config(materialized='view') }}
+
 SELECT npdes_id,
        activity_id,
        npdes_violation_id,

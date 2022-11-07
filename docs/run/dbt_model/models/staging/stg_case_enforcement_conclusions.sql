@@ -1,11 +1,13 @@
 
   
-    create  table staging."stg_case_enforcement_conclusions"
-      as
-        
+    
+
+  create  table "postgres"."staging"."stg_case_enforcement_conclusions__dbt_tmp"
+  as (
+    
 
 select
-  c.case_number,
+  distinct c.case_number,
   c.enf_conclusion_action_code,
   c.primary_law,
   a.description as primary_law_desc,
@@ -16,8 +18,8 @@ select
   cast(coalesce(c.sep_amt,'0') as float) as sep_amt,
   cast(coalesce(c.compliance_action_cost,'0') as float) as compliance_action_cost,
   cast(coalesce(c.cost_recovery_awarded_amt,'0') as float) as cost_recovery_awarded_amt
-from source."case_enforcement_conclusions" c
-  left join seed_data."acronyms" a
+from "postgres"."source"."case_enforcement_conclusions" c
+  left join "postgres"."seed_data"."acronyms" a
     on c.primary_law = a.acronym
-
+  );
   

@@ -1,4 +1,4 @@
-SELECT icis_facility_interest_id as icis_fac_id,
+SELECT distinct icis_facility_interest_id as icis_fac_id,
        npdes_id,
        trim(facility_uin) as fac_id,
        coalesce(trim(facility_type_code),'Not Informed') as fac_type_code,

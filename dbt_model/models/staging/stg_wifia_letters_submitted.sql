@@ -1,4 +1,4 @@
-select
+select distinct
   seq,
   cast("fiscal year" as integer) as fiscal_year,
   {{ capitalize('"prospective borrower"')}} as borrower,

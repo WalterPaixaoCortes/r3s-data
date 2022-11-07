@@ -1,16 +1,18 @@
 
   
-    create  table staging."stg_icis_permits"
-      as
-        SELECT external_permit_nmbr as npdes_id,
+    
+
+  create  table "postgres"."staging"."stg_icis_permits__dbt_tmp"
+  as (
+    SELECT distinct external_permit_nmbr as npdes_id,
        facility_type_indicator,
        permit_type_code,
        major_minor_status_flag,
        permit_status_code,
        cast(coalesce(total_design_flow_nmbr,'0') as float) as total_design_flow_nmbr,
        cast(coalesce(actual_average_flow_nmbr,'0') as float) as actual_average_flow_nmbr,
-       coalesce(state_water_body_name, 'Not Informed') as state_water_body_name,
-       coalesce(permit_name, 'Not Informed') as permit_name,
+       initcap(coalesce(state_water_body_name, 'Not Informed')) as state_water_body_name,
+       initcap(coalesce(permit_name, 'Not Informed')) as permit_name,
        agency_type_code,
        case when coalesce(issue_date,'') = '' then null
        else substr(issue_date,7) || '-' || substr(issue_date,1,2) || '-' || substr(issue_date,4,2) || ' 00:00:00'
@@ -23,6 +25,6 @@
        rnc_tracking_flag,
        tmdl_interface_flag,
        pretreatment_indicator_code
-  FROM source."icis_permits"
-
+  FROM "postgres"."source"."icis_permits"
+  );
   

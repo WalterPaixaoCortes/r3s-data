@@ -1,8 +1,9 @@
 
-  
-    create  table staging."stg_npdes_limits"
-      as
-        SELECT activity_id,
+  create view "postgres"."staging"."stg_npdes_limits__dbt_tmp" as (
+    
+
+SELECT activity_id,
+
        external_permit_nmbr as npdes_id,
        perm_feature_nmbr,
        perm_feature_type_code,
@@ -28,6 +29,5 @@
        limit_value_qualifier_code,
        stay_value_nmbr,
        limit_type_code
-  FROM source."npdes_limits"
-
-  
+  FROM "postgres"."source"."npdes_limits"
+  );

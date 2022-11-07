@@ -14,7 +14,7 @@ select
 from {{source('source', 'case_enforcement_conclusion_pollutants')}}
 )
 select
-  case_number,
+  distinct case_number,
   case when pollutant_name = 'None' 
         then 'Not Informed' 
   else pollutant_name 

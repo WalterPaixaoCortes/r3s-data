@@ -1,4 +1,7 @@
+{{ config(materialized='view') }}
+
 SELECT activity_id,
+
        external_permit_nmbr as npdes_id,
        perm_feature_nmbr,
        perm_feature_type_code,

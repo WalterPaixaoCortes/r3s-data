@@ -1,8 +1,10 @@
 
   
-    create  table staging."stg_npdes_outfalls_layer"
-      as
-        SELECT external_permit_nmbr as npdes_id,
+    
+
+  create  table "postgres"."staging"."stg_npdes_outfalls_layer__dbt_tmp"
+  as (
+    SELECT external_permit_nmbr as npdes_id,
        city,
        state_code,
        zip,
@@ -26,6 +28,6 @@
        state_water_body_name,
        sub_type_desc,
        latlong_type
-  FROM source."npdes_outfalls_layer"
-
+  FROM "postgres"."source"."npdes_outfalls_layer"
+  );
   

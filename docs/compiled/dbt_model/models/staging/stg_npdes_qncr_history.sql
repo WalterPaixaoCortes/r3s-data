@@ -5,4 +5,4 @@ SELECT npdes_id,
        numcvdt,
        numsvcd,
        numpsch
-  FROM source."npdes_qncr_history"
+  FROM "postgres"."source"."npdes_qncr_history"

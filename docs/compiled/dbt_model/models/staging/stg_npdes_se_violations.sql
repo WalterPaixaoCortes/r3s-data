@@ -10,4 +10,4 @@ SELECT npdes_id,
        case when coalesce(rnc_resolution_date,'') = '' then null
        else substr(rnc_resolution_date,7) || '-' || substr(rnc_resolution_date,1,2) || '-' || substr(rnc_resolution_date,4,2) || ' 00:00:00'
   end as rnc_resolution_date
-  FROM source."npdes_se_violations"
+  FROM "postgres"."source"."npdes_se_violations"

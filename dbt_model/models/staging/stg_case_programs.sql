@@ -5,6 +5,6 @@
 )}}
 
 select
-  case_number,
+  distinct case_number,
   program_desc
 from {{source('source', 'case_programs')}}

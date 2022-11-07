@@ -5,7 +5,7 @@
 )}}
 
 select 
-  case_number,
+  distinct case_number,
   state_code,
   coalesce('Region ' || trim(region_code), 'Not Informed') as region_code,
   {{ capitalize('case_name') }} as case_name,

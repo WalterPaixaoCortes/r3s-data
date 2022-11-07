@@ -1,12 +1,14 @@
 
   
-    create  table staging."stg_case_enforcement_type"
-      as
-        
+    
+
+  create  table "postgres"."staging"."stg_case_enforcement_type__dbt_tmp"
+  as (
+    
 
 select
-  case_number,
+  distinct case_number,
   enf_type_desc
-from source."case_enforcement_type"
-
+from "postgres"."source"."case_enforcement_type"
+  );
   

@@ -1,15 +1,17 @@
 
   
-    create  table staging."stg_case_enforcement_conclusion_dollars"
-      as
-        
+    
 
-SELECT case_number,
+  create  table "postgres"."staging"."stg_case_enforcement_conclusion_dollars__dbt_tmp"
+  as (
+    
+
+SELECT distinct case_number,
        cast(coalesce(state_local_penalty_amt,'0') as float) as state_local_penalty_amt,
        cast(coalesce(cost_recovery_amt,'0') as float) as cost_recovery_amt,
        cast(coalesce(fed_penalty,'0') as float) as fed_penalty,
        cast(coalesce(compliance_action_cost,'0') as float) as compliance_action_cost,
        cast(coalesce(sep_cost,'0') as float) as sep_cost
-  FROM source."case_enforcement_conclusion_dollars"
-
+  FROM "postgres"."source"."case_enforcement_conclusion_dollars"
+  );
   

@@ -4,7 +4,7 @@
     ]
 )}}
 
-SELECT case_number,
+SELECT distinct case_number,
        cast(coalesce(state_local_penalty_amt,'0') as float) as state_local_penalty_amt,
        cast(coalesce(cost_recovery_amt,'0') as float) as cost_recovery_amt,
        cast(coalesce(fed_penalty,'0') as float) as fed_penalty,

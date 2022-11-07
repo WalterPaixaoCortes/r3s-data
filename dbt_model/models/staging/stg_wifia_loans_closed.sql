@@ -1,5 +1,5 @@
-SELECT seq, 
-       {{capitalize('borrower')}} as borrower, 
+SELECT distinct seq, 
+       trim(substr({{capitalize('borrower')}},1,strpos({{capitalize('borrower')}}, '(pdf)'))) as borrower, 
        {{capitalize('"project name"')}} as project_name, 
        state, 
        {{ format_date('"close date"') }} as close_date, 

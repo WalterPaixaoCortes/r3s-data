@@ -1,5 +1,5 @@
 
 
-SELECT case_number,
+SELECT distinct case_number,
        comp_action_category_type_desc
-  FROM source."case_enforcement_conclusion_complying_actions"
+  FROM "postgres"."source"."case_enforcement_conclusion_complying_actions"

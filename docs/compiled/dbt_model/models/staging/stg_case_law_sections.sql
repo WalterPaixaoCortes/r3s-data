@@ -1,6 +1,6 @@
 
 
 select
-  case_number,
+  distinct case_number,
   statute_code
-from source."case_law_sections"
+from "postgres"."source"."case_law_sections"

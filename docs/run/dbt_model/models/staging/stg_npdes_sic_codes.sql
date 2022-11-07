@@ -1,11 +1,13 @@
 
   
-    create  table staging."stg_npdes_sic_codes"
-      as
-        select  sic_code, 
+    
+
+  create  table "postgres"."staging"."stg_npdes_sic_codes__dbt_tmp"
+  as (
+    select  sic_code, 
         sic_desc, 
         primary_indicator_flag,
-        datetime() as load_date
-  from source."npdes_sics"
-
+        now() as load_date
+  from "postgres"."source"."npdes_sics"
+  );
   

@@ -4,7 +4,7 @@
     ]
 )}}
 
-select 'INFORMAL' as enf_type,
+select distinct 'INFORMAL' as enf_type,
        trim(enf.PGM_SYS_ID) as prg_id,
        trim(enf.REGISTRY_ID) as fac_id,
        trim(enf.AGENCY) as enf_agency,

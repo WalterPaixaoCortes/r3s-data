@@ -1,4 +1,7 @@
+
+
 SELECT activity_id,
+
        external_permit_nmbr as npdes_id,
        perm_feature_nmbr,
        perm_feature_type_code,
@@ -24,4 +27,4 @@ SELECT activity_id,
        limit_value_qualifier_code,
        stay_value_nmbr,
        limit_type_code
-  FROM source."npdes_limits"
+  FROM "postgres"."source"."npdes_limits"

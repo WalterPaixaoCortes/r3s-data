@@ -1,255 +1,444 @@
 version: 2
 
 models:
+  - name: icis_master_general_permits
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: facility_type_indicator
+     - name: permit_type_code
+     - name: major_minor_status_flag
+     - name: permit_status_code
+     - name: total_design_flow_nmbr
+     - name: actual_average_flow_nmbr
+     - name: state_water_body_name
+     - name: permit_name
+     - name: agency_type_code
+     - name: issue_date
+     - name: expiration_date
+     - name: permit_comp_status_flag
+     - name: rnc_tracking_flag
+     - name: tmdl_interface_flag
+     - name: pretreatment_indicator_code
   - name: stg_case_defendants
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: defendant_name
+     - name: case_number
+     - name: defendant_name
   - name: stg_case_enforcement_conclusion_complying_actions
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: comp_action_category_type_desc
+     - name: case_number
+     - name: comp_action_category_type_desc
   - name: stg_case_enforcement_conclusion_dollars
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: state_local_penalty_amt
-      - name: cost_recovery_amt
-      - name: fed_penalty
-      - name: compliance_action_cost
-      - name: sep_cost
+     - name: case_number
+     - name: state_local_penalty_amt
+     - name: cost_recovery_amt
+     - name: fed_penalty
+     - name: compliance_action_cost
+     - name: sep_cost
   - name: stg_case_enforcement_conclusion_pollutants
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: pollutant_name
-      - name: average_annual_value
-      - name: pollutant_unit_code
-      - name: media_code
+     - name: case_number
+     - name: pollutant_name
+     - name: average_annual_value
+     - name: pollutant_unit_code
+     - name: media_code
   - name: stg_case_enforcement_conclusion_sep
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: sep_category_desc
-      - name: sep_amt
+     - name: case_number
+     - name: sep_category_desc
+     - name: sep_amt
   - name: stg_case_enforcement_conclusions
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: enf_conclusion_action_code
-      - name: primary_law
-      - name: region_code
-      - name: activity_type_code
-      - name: fed_penalty_assessed_amt
-      - name: state_local_penalty_amt
-      - name: sep_amt
-      - name: compliance_action_cost
-      - name: cost_recovery_awarded_amt
+     - name: case_number
+     - name: enf_conclusion_action_code
+     - name: primary_law
+     - name: primary_law_desc
+     - name: region_code
+     - name: activity_type_code
+     - name: fed_penalty_assessed_amt
+     - name: state_local_penalty_amt
+     - name: sep_amt
+     - name: compliance_action_cost
+     - name: cost_recovery_awarded_amt
   - name: stg_case_enforcement_type
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: enf_type_desc
+     - name: case_number
+     - name: enf_type_desc
   - name: stg_case_enforcements
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: state_code
-      - name: region_code
-      - name: case_name
-      - name: activity_type_code
-      - name: activity_status_desc
-      - name: activity_status_date
-      - name: enf_outcome_desc
-      - name: total_penalty_assessed_amt
-      - name: total_cost_recovery_amt
-      - name: total_comp_action_amt
-      - name: hq_division
-      - name: voluntary_self_disclosure_flag
-      - name: multimedia_flag
+     - name: case_number
+     - name: state_code
+     - name: region_code
+     - name: case_name
+     - name: activity_type_code
+     - name: activity_status_desc
+     - name: activity_status_date
+     - name: enf_outcome_desc
+     - name: total_penalty_assessed_amt
+     - name: total_cost_recovery_amt
+     - name: total_comp_action_amt
+     - name: hq_division
+     - name: voluntary_self_disclosure_flag
+     - name: multimedia_flag
   - name: stg_case_facilities
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: registry_id
-      - name: city
-      - name: state_code
-      - name: zip
-      - name: primary_sic_code
-      - name: primary_naics_code
+     - name: case_number
+     - name: registry_id
+     - name: city
+     - name: state_code
+     - name: zip
+     - name: primary_sic_code
+     - name: primary_naics_code
   - name: stg_case_law_sections
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: statute_code
+     - name: case_number
+     - name: statute_code
   - name: stg_case_penalties
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: fed_penalty
-      - name: st_lcl_penalty
-      - name: total_sep
-      - name: compliance_action_cost
-      - name: federal_cost_recovery_amt
-      - name: state_local_cost_recovery_amt
+     - name: case_number
+     - name: fed_penalty
+     - name: st_lcl_penalty
+     - name: total_sep
+     - name: compliance_action_cost
+     - name: federal_cost_recovery_amt
+     - name: state_local_cost_recovery_amt
   - name: stg_case_pollutants
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: pollutant_desc
+     - name: case_number
+     - name: pollutant_desc
   - name: stg_case_programs
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: program_desc
+     - name: case_number
+     - name: program_desc
   - name: stg_case_related_activities
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: activity_status_date
-      - name: activity_type_code
+     - name: case_number
+     - name: activity_status_date
+     - name: activity_type_code
   - name: stg_case_relief_sought
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: relief_desc
+     - name: case_number
+     - name: relief_desc
   - name: stg_case_violations
     tags: ["ICIS-FE&C"]
     columns:
-      - name: case_number
-      - name: violation_type_code
-      - name: violation_type_desc
+     - name: case_number
+     - name: violation_type_code
+     - name: violation_type_desc
   - name: stg_epa_informal_enforcement_actions
     tags: ["not defined"]
     columns:
-      - name: enf_type
-      - name: prg_id
-      - name: fac_id
-      - name: enf_agency
-      - name: activity_type_code
-      - name: enf_type_code
-      - name: enf_type_desc
-      - name: enf_achieved_date
-      - name: enf_identifier
-      - name: enf_statute
-      - name: load_date
+     - name: enf_type
+     - name: prg_id
+     - name: fac_id
+     - name: enf_agency
+     - name: activity_type_code
+     - name: enf_type_code
+     - name: enf_type_desc
+     - name: enf_achieved_date
+     - name: enf_identifier
+     - name: enf_statute
+     - name: load_date
   - name: stg_frs_facilities
     tags: ["FRS"]
     columns:
-      - name: fac_id
-      - name: fac_name
-      - name: fac_street
-      - name: fac_city
-      - name: fac_state
-      - name: fac_zipcode
-      - name: fac_county
-      - name: fac_epa_region
-      - name: fac_latitude
-      - name: fac_longitude
-      - name: load_date
+     - name: fac_id
+     - name: fac_name
+     - name: fac_street
+     - name: fac_city
+     - name: fac_state
+     - name: fac_zipcode
+     - name: fac_county
+     - name: fac_epa_region
+     - name: fac_latitude
+     - name: fac_longitude
+     - name: load_date
   - name: stg_frs_naics_codes
     tags: ["FRS"]
     columns:
-      - name: fac_id
-      - name: prg_id
-      - name: prg_acronym
-      - name: prg_naics_code
+     - name: fac_id
+     - name: prg_id
+     - name: prg_acronym
+     - name: prg_naics_code
   - name: stg_frs_programs
     tags: ["FRS"]
     columns:
-      - name: prg_id
-      - name: fac_id
-      - name: prg_acronym
-      - name: prg_primary_name
-      - name: prg_city_name
-      - name: prg_county_name
-      - name: prg_state_name
-      - name: prg_country_name
-      - name: prg_zipcode
-      - name: load_date
+     - name: prg_id
+     - name: fac_id
+     - name: prg_acronym
+     - name: prg_primary_name
+     - name: prg_city_name
+     - name: prg_county_name
+     - name: prg_state_name
+     - name: prg_country_name
+     - name: prg_zipcode
+     - name: load_date
   - name: stg_frs_sics_codes
     tags: ["FRS"]
     columns:
-      - name: prg_id
-      - name: fac_id
-      - name: prg_acronym
-      - name: prg_sics_code
-  - name: stg_naics_codes
-    tags: ["FRS"]
+     - name: prg_id
+     - name: fac_id
+     - name: prg_acronym
+     - name: prg_sics_code
+  - name: stg_icis_facilities
+    tags: ["NPDES"]
     columns:
-      - name: naics_code
-      - name: naics_desc
+     - name: icis_fac_id
+     - name: npdes_id
+     - name: fac_id
+     - name: fac_type_code
+     - name: fac_name
+     - name: fac_city
+     - name: fac_state
+     - name: fac_zipcode
+     - name: impaired_waters
+  - name: stg_icis_permits
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: facility_type_indicator
+     - name: permit_type_code
+     - name: major_minor_status_flag
+     - name: permit_status_code
+     - name: total_design_flow_nmbr
+     - name: actual_average_flow_nmbr
+     - name: state_water_body_name
+     - name: permit_name
+     - name: agency_type_code
+     - name: issue_date
+     - name: expiration_date
+     - name: permit_comp_status_flag
+     - name: dmr_non_receipt_flag
+     - name: rnc_tracking_flag
+     - name: tmdl_interface_flag
+     - name: pretreatment_indicator_code
+  - name: stg_naics_codes
+    tags: ["not defined"]
+    columns:
+     - name: naics_code
+     - name: naics_desc
+  - name: stg_npdes_cs_violations
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: npdes_violation_id
+     - name: violation_type_code
+     - name: violation_desc
+     - name: schedule_event_desc
+     - name: rnc_detection_desc
+     - name: rnc_detection_date
+     - name: rnc_resolution_date
+  - name: stg_npdes_eff_violations
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: activity_id
+     - name: npdes_violation_id
+     - name: perm_feature_nmbr
+     - name: monitoring_location_code
+     - name: dmr_form_value_id
+     - name: limit_value_standard_units
+     - name: violation_type_code
+     - name: violation_type_desc
+     - name: violation_desc
+     - name: parameter_desc
+     - name: standard_unit_desc
+     - name: monitoring_period_end_date
+     - name: nmbr_of_report
+     - name: limit_id
+     - name: value_type_code
+     - name: rnc_detection_desc
+     - name: rnc_detection_date
+     - name: rnc_resolution_date
+     - name: statistical_base_code
   - name: stg_npdes_formal_enforcement_actions
     tags: ["NPDES"]
     columns:
-      - name: enf_type
-      - name: npdes_id
-      - name: enf_agency
-      - name: activity_type_code
-      - name: enf_type_code
-      - name: enf_type_desc
-      - name: enf_achieved_date
-      - name: enf_identifier
-      - name: activity_id
-      - name: fed_penalty_assessed_amt
-      - name: state_local_penalty_amt
-      - name: load_date
+     - name: enf_type
+     - name: npdes_id
+     - name: enf_agency
+     - name: activity_type_code
+     - name: enf_type_code
+     - name: enf_type_desc
+     - name: enf_achieved_date
+     - name: enf_identifier
+     - name: activity_id
+     - name: fed_penalty_assessed_amt
+     - name: state_local_penalty_amt
+     - name: load_date
   - name: stg_npdes_informal_enforcement_actions
     tags: ["NPDES"]
     columns:
-      - name: enf_type
-      - name: fac_id
-      - name: npdes_id
-      - name: enf_agency
-      - name: activity_type_code
-      - name: enf_type_code
-      - name: enf_type_desc
-      - name: enf_achieved_date
-      - name: enf_identifier
-      - name: activity_id
-      - name: official_flg
-      - name: load_date
+     - name: enf_type
+     - name: fac_id
+     - name: npdes_id
+     - name: enf_agency
+     - name: activity_type_code
+     - name: enf_type_code
+     - name: enf_type_desc
+     - name: enf_achieved_date
+     - name: enf_identifier
+     - name: activity_id
+     - name: official_flg
+     - name: load_date
+  - name: stg_npdes_limits
+    tags: ["NPDES"]
+    columns:
+     - name: activity_id
+     - name: npdes_id
+     - name: perm_feature_nmbr
+     - name: perm_feature_type_code
+     - name: limit_set_status_flag
+     - name: limit_id
+     - name: limit_begin_date
+     - name: limit_end_date
+     - name: nmbr_of_report
+     - name: parameter_desc
+     - name: monitoring_location_code
+     - name: limit_value_id
+     - name: limit_value_type_code
+     - name: limit_value_nmbr
+     - name: limit_unit_desc
+     - name: standard_unit_desc
+     - name: limit_value_standard_units
+     - name: statistical_base_code
+     - name: statistical_base_type_code
+     - name: limit_value_qualifier_code
+     - name: stay_value_nmbr
+     - name: limit_type_code
   - name: stg_npdes_naics_codes
     tags: ["NPDES"]
     columns:
-      - name: naics_code
-      - name: naics_desc
-      - name: primary_indicator_flag
-      - name: load_date
+     - name: naics_code
+     - name: naics_desc
+     - name: primary_indicator_flag
+     - name: load_date
+  - name: stg_npdes_outfalls_layer
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: city
+     - name: state_code
+     - name: zip
+     - name: facility_type_desc
+     - name: permit_type_code
+     - name: permit_status_code
+     - name: total_design_flow_nmbr
+     - name: naics_codes
+     - name: fac_federal_agency_name
+     - name: cwp_current_snc_status
+     - name: cwp_current_viol
+     - name: cwp_date_last_inspection
+     - name: date_last_formal_ea
+     - name: dmr_pounds
+     - name: lim_pollutant
+     - name: permit_effective_date
+     - name: permit_expiration_date
+     - name: permit_termination_date
+     - name: permit_components
+     - name: major_minor_flag
+     - name: state_water_body_name
+     - name: sub_type_desc
+     - name: latlong_type
+  - name: stg_npdes_perm_components
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: component_type_desc
+  - name: stg_npdes_perm_feature_coords
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: perm_feature_nmbr
+     - name: perm_feature_id
+  - name: stg_npdes_ps_violations
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: npdes_violation_id
+     - name: violation_type_code
+     - name: violation_desc
+     - name: schedule_event_desc
+     - name: rnc_detection_desc
+     - name: rnc_detection_date
+     - name: rnc_resolution_date
+  - name: stg_npdes_qncr_history
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: yearqtr
+     - name: hlrnc
+     - name: nume90q
+     - name: numcvdt
+     - name: numsvcd
+     - name: numpsch
+  - name: stg_npdes_se_violations
+    tags: ["NPDES"]
+    columns:
+     - name: npdes_id
+     - name: npdes_violation_id
+     - name: violation_type_code
+     - name: violation_desc
+     - name: single_event_violation_date
+     - name: single_event_agency_type_code
+     - name: rnc_detection_desc
+     - name: rnc_resolution_date
   - name: stg_npdes_sic_codes
     tags: ["NPDES"]
     columns:
-      - name: sic_code
-      - name: sic_desc
-      - name: primary_indicator_flag
-      - name: load_date
-  - name: stg_wifia_loans_closed
-    tags: ["WIFIA"]
+     - name: sic_code
+     - name: sic_desc
+     - name: primary_indicator_flag
+     - name: load_date
+  - name: stg_npdes_violation_enforcements
+    tags: ["NPDES"]
     columns:
-      - name: seq
-      - name: borrower
-      - name: project_name
-      - name: state
-      - name: close_date
-      - name: loan_amount
-      - name: environmental_compliance
-  - name: stg_wifia_projects_selected
-    tags: ["WIFIA"]
-    columns:
-      - name: seq
-      - name: fiscal_year
-      - name: borrower
-      - name: project_name
-      - name: loan_amount
-      - name: state
-      - name: approval_status
+     - name: npdes_violation_id
+     - name: violation_desc
+     - name: activity_id
+     - name: activity_type_code
   - name: stg_wifia_letters_submitted
     tags: ["WIFIA"]
     columns:
-      - name: seq
-      - name: fiscal_year
-      - name: prospective_borrower
-      - name: state
-      - name: project_description
+     - name: seq
+     - name: fiscal_year
+     - name: borrower
+     - name: state
+     - name: project_desc
+  - name: stg_wifia_loans_closed
+    tags: ["WIFIA"]
+    columns:
+     - name: seq
+     - name: borrower
+     - name: project_name
+     - name: state
+     - name: close_date
+     - name: loan_amount
+     - name: environmental_compliance
+  - name: stg_wifia_projects_selected
+    tags: ["WIFIA"]
+    columns:
+     - name: seq
+     - name: fiscal_year
+     - name: borrower
+     - name: project_name
+     - name: loan_amount_desc
+     - name: loan_amount
+     - name: state
+     - name: approval_status
